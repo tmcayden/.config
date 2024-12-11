@@ -10,3 +10,6 @@ vim.api.nvim_set_keymap('n', '<leader>tl', ':FloatermToggle four<CR>', { noremap
 -- Exit terminal mode and close the terminal window (hide it)
 vim.api.nvim_set_keymap('t', '<C-w>q', '<C-\\><C-n>:FloatermHide<CR>', { noremap = true, silent = true })
 
+
+vim.g.floaterm_width = 0.8
+vim.g.floaterm_height = 0.8
