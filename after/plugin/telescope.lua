@@ -10,7 +10,6 @@ require('telescope').setup{
         -- Custom keybindings for interacting with search history
         ["<C-n>"] = require('telescope.actions').cycle_history_next,  -- Next search in history
         ["<C-p>"] = require('telescope.actions').cycle_history_prev,  -- Previous search in history
-        ["t"] = require('telescope.actions').select_tab,
       },
      n = {
         ["t"] = require('telescope.actions').select_tab,
