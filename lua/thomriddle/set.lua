@@ -2,7 +2,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = ""
 
-vim.opt.scrolloff = 999
+vim.opt.scrolloff = 10
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
