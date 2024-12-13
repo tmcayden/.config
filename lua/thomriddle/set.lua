@@ -30,3 +30,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
+
+vim.opt.fillchars:append({ eob = " " })  -- Optional: prevents extra spaces at the end
+vim.opt.fileformat = "unix"  -- Set your preferred file format
+vim.opt.endofline = false   -- Disable automatic new line at end

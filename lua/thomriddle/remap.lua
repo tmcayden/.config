@@ -46,3 +46,6 @@ vim.keymap.set("n", "<S-Tab>", ":tabprevious<CR>", { noremap = true, silent = tr
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- new tabs
+vim.keymap.set('n', '<leader>tc', ':tabnew<CR>', { noremap = true, silent = true })
