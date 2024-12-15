@@ -20,7 +20,23 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
-
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup({
+                -- Your configuration options go here
+                -- For example:
+                plugins = {
+                    marks = true, -- shows a list of your marks on ' and `
+                    registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+                    spelling = {
+                        enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+                        suggestions = 20, -- how many suggestions should be shown in the list?
+                    },
+                }
+            })
+        end
+    }
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon')

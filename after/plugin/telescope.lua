@@ -1,21 +1,29 @@
 require('telescope').setup{
-  defaults = {
-    -- Enable search history
-    history = {
-      path = vim.fn.stdpath('data') .. '/telescope_history',  -- Path to store history
-      limit = 1000,  -- Limit the number of saved search entries
+    defaults = {
+        -- Enable search history
+        history = {
+            path = vim.fn.stdpath('data') .. '/telescope_history',  -- Path to store history
+            limit = 1000,  -- Limit the number of saved search entries
+        },
+        mappings = {
+            i = {
+                -- Custom keybindings for interacting with search history
+                ["<C-n>"] = require('telescope.actions').cycle_history_next,  -- Next search in history
+                ["<C-p>"] = require('telescope.actions').cycle_history_prev,  -- Previous search in history
+            },
+            n = {
+                ["t"] = require('telescope.actions').select_tab,
+            }
+        },
+        file_ignore_patterns = {
+            ".git",
+            "node_modules",
+            "*.log",
+            "*.tmp",
+            "__pycache__",
+            "*.pyc",
+        },
     },
-    mappings = {
-      i = {
-        -- Custom keybindings for interacting with search history
-        ["<C-n>"] = require('telescope.actions').cycle_history_next,  -- Next search in history
-        ["<C-p>"] = require('telescope.actions').cycle_history_prev,  -- Previous search in history
-      },
-     n = {
-        ["t"] = require('telescope.actions').select_tab,
-     }
-    },
-  },
 }
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
