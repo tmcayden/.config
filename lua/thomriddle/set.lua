@@ -15,7 +15,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "~/.vim/undodir"
+vim.opt.undodir = vim.fn.expand("$LOCALAPPDATA") .. "\\nvim\\.vim\\undo"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
