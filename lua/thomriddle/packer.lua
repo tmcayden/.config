@@ -12,9 +12,7 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    require("packer").startup(function()
-        use "sainnhe/gruvbox-material"
-    end)
+    use "sainnhe/gruvbox-material"
     use {
         "folke/which-key.nvim",
         config = function()
