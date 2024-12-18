@@ -56,14 +56,11 @@ cmp.setup({
     },
 })
 
-require('mason').setup()
+require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'volar' }, -- Ensure Volar is installed
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  },
 })
-
-local lspconfig = require('lspconfig')
-
-lspconfig.volar.setup({
-    filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
-})
-
